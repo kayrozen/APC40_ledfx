@@ -54,10 +54,19 @@ class MidiInput:
 
 class InputProcessor:
     def __init__(self, midi_port: str):
+        """Process all midi triggers that map midi key to effect.
+
+        :param midi_port: Name of the midi device to be read from.
+        """
         self._midi_port: str = midi_port
         self._midi_triggers: Dict[MidiInput, ApiCall] = {}
 
     def add_midi_trigger(self, midi_input: MidiInput, api_call: ApiCall):
+        """Add a midi button and responding api call.
+
+        :param midi_input: Midi input object corresponding to the button pressed.
+        :param api_call: Api call to call upon the midi button pressed.
+        """
         self._midi_triggers[midi_input] = api_call
 
     def run(self):
