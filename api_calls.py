@@ -16,7 +16,7 @@ class OneShot(ApiCall):
     def __init__(self, cfg: Dict):
         super().__init__(cfg['host'])
         self._virtual = cfg['virtual_id']
-        self._api = self._host + "/api/virtuals_tools/" + self._virtual
+        self._api = self._host + '/api/virtuals_tools/' + self._virtual
         self._put_json = {
             "tool": "oneshot",
             "color": cfg['color'],
@@ -48,3 +48,34 @@ class AdjustBrightness(ApiCall):
             todo['config']['brightness'] = midi_msg.value / self._max_control_value
             requests.post(self._api, json=todo)
             self._counter = 0
+
+
+class SwitchToEffect(ApiCall):
+    def __init__(self, cfg: Dict):
+        super().__init__(cfg['host'])
+        self._virtual = cfg['virtual_id']
+        self._api = self._host + '/api/virtuals/' + self._virtual + '/effects'
+        self._put_json = {
+            "type": cfg['type']
+        }
+
+    def process(self, midi_msg):
+        print(requests.put(self._api, json=self._put_json))
+
+
+class SwitchToEffectAndPreset(ApiCall):
+    def __init__(self, cfg: Dict):
+        super().__init__(cfg['host'])
+        self._virtual = cfg['virtual_id']
+        self._api = self._host + '/api/virtuals/' + self._virtual + '/presets'
+        self._put_json = {
+            "category": cfg['category'],
+            "effect_id": cfg['effect_id'],
+            "preset_id": cfg['preset_id']
+        }
+
+    def process(self, midi_msg):
+        response = requests.get(self._api)
+        import json
+        print(json.dumps(response.json(), sort_keys=True, indent=2))
+        print(requests.put(self._api, json=self._put_json))

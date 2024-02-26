@@ -2,7 +2,7 @@ import mido
 from typing import Dict, List
 import sys
 import yaml
-from api_calls import ApiCall, AdjustBrightness, OneShot
+from api_calls import ApiCall, AdjustBrightness, OneShot, SwitchToEffect, SwitchToEffectAndPreset
 from midi_inputs import MidiInput
 
 

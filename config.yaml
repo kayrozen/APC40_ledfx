@@ -8,7 +8,28 @@
         host: 'http://localhost:8888'
         virtual_id: 'reactor-base-0'
 # Buttons
-
+- type: 'note_on'
+  channel: 9
+  note: 36
+  control: null
+  api_calls:
+    - SwitchToEffectAndPreset:
+        host: 'http://localhost:8888'
+        virtual_id: 'reactor-base-0'
+        category: 'ledfx_presets'
+        effect_id: 'rainbow'
+        preset_id: 'reset'
+- type: 'note_on'
+  channel: 9
+  note: 37
+  control: null
+  api_calls:
+    - SwitchToEffectAndPreset:
+        host: 'http://localhost:8888'
+        virtual_id: 'reactor-base-0'
+        category: 'user_presets'
+        effect_id: 'singleColor'
+        preset_id: '1'
 # Keyboard
 - type: 'note_on'
   channel: 0
