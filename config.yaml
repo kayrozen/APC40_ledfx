@@ -1,0 +1,38 @@
+# Knobs
+- type: 'control_change'
+  channel: 0
+  note: null
+  control: 74
+  api_calls:
+    - AdjustBrightness:
+        host: 'http://localhost:8888'
+        virtual_id: 'reactor-base-0'
+# Buttons
+
+# Keyboard
+- type: 'note_on'
+  channel: 0
+  note: 48
+  control: null
+  api_calls:
+    - OneShot:
+        host: 'http://localhost:8888'
+        virtual_id: 'reactor-base-0'
+        color: 'white'
+    - OneShot:
+        host: 'http://localhost:8888'
+        virtual_id: 'reactor-base-1'
+        color: 'red'
+- type: 'note_on'
+  channel: 0
+  note: 49
+  control: null
+  api_calls:
+    - OneShot:
+        host: 'http://localhost:8888'
+        virtual_id: 'reactor-base-0'
+        color: 'yellow'
+    - OneShot:
+        host: 'http://localhost:8888'
+        virtual_id: 'reactor-base-1'
+        color: 'yellow'
