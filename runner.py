@@ -46,4 +46,4 @@ class InputProcessor:
                             [api_call.process(msg) for api_call in api_calls]
                         except Exception as e:
                             print(e)
-                        continue
+                        break
