@@ -1,6 +1,6 @@
 import requests
 import json
-from runner import InputProcessor
+from src.runner import InputProcessor
 
 
 MIDI_HOST = 'Arturia MiniLab mkII MIDI 1'
@@ -12,7 +12,7 @@ def main():
     print(json.dumps(response.json(), sort_keys=True, indent=2))
 
     runner = InputProcessor(MIDI_HOST)
-    runner.load_from_yaml('config.yaml')
+    runner.load_from_yaml('config/config.yaml')
     runner.run()
 
 

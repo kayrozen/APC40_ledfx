@@ -1,0 +1,148 @@
+# Knobs
+- type: 'control_change'
+  channel: 0
+  note: null
+  control: 74
+  api_calls:
+    - AdjustBrightness:
+        host: 'http://localhost:8888'
+        virtual_id: 'tester'
+# Buttons
+- type: 'note_on'
+  channel: 9
+  note: 36
+  control: null
+  api_calls:
+    - SwitchToEffectAndPreset:
+        host: 'http://localhost:8888'
+        virtual_id: 'tester'
+        category: 'user_presets'
+        effect_id: 'strobe'
+        preset_id: '1'
+- type: 'note_on'
+  channel: 9
+  note: 37
+  control: null
+  api_calls:
+    - SwitchToEffectAndPreset:
+        host: 'http://localhost:8888'
+        virtual_id: 'tester'
+        category: 'user_presets'
+        effect_id: 'bar'
+        preset_id: '1'
+- type: 'note_on'
+  channel: 9
+  note: 38
+  control: null
+  api_calls:
+    - SwitchToEffectAndPreset:
+        host: 'http://localhost:8888'
+        virtual_id: 'tester'
+        category: 'user_presets'
+        effect_id: 'energy'
+        preset_id: '1'
+- type: 'note_on'
+  channel: 9
+  note: 39
+  control: null
+  api_calls:
+    - SwitchToEffectAndPreset:
+        host: 'http://localhost:8888'
+        virtual_id: 'tester'
+        category: 'user_presets'
+        effect_id: 'pitchSpectrum'
+        preset_id: '1'
+- type: 'note_on'
+  channel: 9
+  note: 40
+  control: null
+  api_calls:
+    - SwitchToEffectAndPreset:
+        host: 'http://localhost:8888'
+        virtual_id: 'tester'
+        category: 'user_presets'
+        effect_id: 'rain'
+        preset_id: '1'
+- type: 'note_on'
+  channel: 9
+  note: 41
+  control: null
+  api_calls:
+    - SwitchToEffectAndPreset:
+        host: 'http://localhost:8888'
+        virtual_id: 'tester'
+        category: 'user_presets'
+        effect_id: 'real_strobe'
+        preset_id: '1'
+- type: 'note_on'
+  channel: 9
+  note: 42
+  control: null
+  api_calls:
+    - SwitchToEffectAndPreset:
+        host: 'http://localhost:8888'
+        virtual_id: 'tester'
+        category: 'user_presets'
+        effect_id: 'scroll'
+        preset_id: '1'
+- type: 'note_on'
+  channel: 9
+  note: 43
+  control: null
+  api_calls:
+    - SwitchToEffectAndPreset:
+        host: 'http://localhost:8888'
+        virtual_id: 'tester'
+        category: 'user_presets'
+        effect_id: 'melt'
+        preset_id: '1'
+- type: 'note_on'
+  channel: 9
+  note: 40
+  control: null
+  api_calls:
+    - SwitchToEffectAndPreset:
+        host: 'http://localhost:8888'
+        virtual_id: 'tester'
+        category: 'user_presets'
+        effect_id: 'power'
+        preset_id: '1'
+# Keyboard
+- type: 'note_on'
+  channel: 0
+  note: 48
+  control: null
+  api_calls:
+    - OneShot:
+        host: 'http://localhost:8888'
+        virtual_id: 'tester'
+        color: 'white'
+        ramp: 10
+        hold: 0
+        fade: 200
+    - OneShot:
+        host: 'http://localhost:8888'
+        virtual_id: 'reactor-base-1'
+        color: 'red'
+        ramp: 10
+        hold: 0
+        fade: 200
+- type: 'note_on'
+  channel: 0
+  note: 49
+  control: null
+  api_calls:
+    - OneShot:
+        host: 'http://localhost:8888'
+        virtual_id: 'tester'
+        color: 'red'
+        ramp: 10
+        hold: 0
+        fade: 200
+    - OneShot:
+        host: 'http://localhost:8888'
+        virtual_id: 'reactor-base-1'
+        color: 'yellow'
+        ramp: 10
+        hold: 0
+        fade: 200

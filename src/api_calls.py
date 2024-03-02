@@ -20,9 +20,9 @@ class OneShot(ApiCall):
         self._put_json = {
             "tool": "oneshot",
             "color": cfg['color'],
-            "ramp": 10,
-            "hold": 0,
-            "fade": 200
+            "ramp": cfg['ramp'],
+            "hold": cfg['hold'],
+            "fade": cfg['fade']
         }
 
     def process(self, midi_msg):

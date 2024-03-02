@@ -2,8 +2,8 @@ import mido
 from typing import Dict, List
 import sys
 import yaml
-from api_calls import ApiCall, AdjustBrightness, OneShot, SwitchToEffect, SwitchToEffectAndPreset
-from midi_inputs import MidiInput
+from .api_calls import ApiCall, AdjustBrightness, OneShot, SwitchToEffect, SwitchToEffectAndPreset
+from .midi_inputs import MidiInput
 
 
 def str_to_class(class_name):
