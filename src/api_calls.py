@@ -46,7 +46,8 @@ class AdjustBrightness(ApiCall):
             response = requests.get(self._api)
             todo = response.json()['effect']
             todo['config']['brightness'] = midi_msg.value / self._max_control_value
-            requests.post(self._api, json=todo)
+            todo['config']['background_brightness'] = midi_msg.value / self._max_control_value
+            requests.put(self._api, json=todo)
             self._counter = 0
 
 
