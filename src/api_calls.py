@@ -69,6 +69,7 @@ class SwitchToEffectAndPreset(ApiCall):
         super().__init__(cfg['host'])
         self._virtual = cfg['virtual_id']
         self._api = self._host + '/api/virtuals/' + self._virtual + '/presets'
+        self._brightness_api = self._host + '/api/virtuals/' + self._virtual + '/effects'
         self._put_json = {
             "category": cfg['category'],
             "effect_id": cfg['effect_id'],
@@ -76,7 +77,19 @@ class SwitchToEffectAndPreset(ApiCall):
         }
 
     def process(self, midi_msg):
-        response = requests.get(self._api)
-        import json
-        print(json.dumps(response.json(), sort_keys=True, indent=2))
-        print(requests.put(self._api, json=self._put_json))
+        # Get previous effect brightness
+        response = requests.get(self._brightness_api)
+        brightness = response.json()['effect']['config']['brightness']
+        bg_brightness = response.json()['effect']['config']['background_brightness']
+
+        # Switch to new effect and preset
+        requests.put(self._api, json=self._put_json)
+
+        # Get config of new effect
+        response = requests.get(self._brightness_api)
+        todo = response.json()['effect']
+
+        # Overwrite the brightness from previous preset to keeep the brightness
+        todo['config']['brightness'] = brightness
+        todo['config']['background_brightness'] = bg_brightness
+        requests.put(self._brightness_api, json=todo)
