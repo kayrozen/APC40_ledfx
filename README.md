@@ -1,5 +1,5 @@
 # APC40_ledfx
-Little library to interface Akai APC40 Board with ledfx.
+Little library to interface Akai APC40 Board with ledfx. It uses python to poll a MIDI device and and trigger LedFX API calls.
 
 ## Configuration 
 
