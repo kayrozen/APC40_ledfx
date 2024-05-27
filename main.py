@@ -3,7 +3,7 @@ import json
 from src.runner import InputProcessor
 
 
-MIDI_HOST = 'Arturia MiniLab mkII MIDI 1'
+MIDI_HOST = 'Akai APC-40 MIDI 1'
 
 
 def main():
