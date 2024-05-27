@@ -2,7 +2,7 @@
 - type: 'control_change'
   channel: 0
   note: null
-  control: 74
+  control: 14
   api_calls:
     - AdjustBrightness:
         host: 'http://localhost:8888'
