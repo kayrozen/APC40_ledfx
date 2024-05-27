@@ -1,2 +1,2 @@
-# arturia_ledfx
-Little library to interface Arturia MIDI keyboard with ledfx.
+# APC40_ledfx
+Little library to interface Akai APC40 Board with ledfx.
