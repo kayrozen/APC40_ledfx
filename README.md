@@ -5,7 +5,7 @@ Little library to interface Akai APC40 Board with ledfx.
 
 In Config.yaml, add button for each Scenes / effects. 
 
-[LedFX API Reference]([https://pages.github.com/](https://ledfx.readthedocs.io/en/latest/api.html#)).
+[LedFX API Reference](https://ledfx.readthedocs.io/en/latest/api.html#)
 
 ## APC40 MIDI Note map  
 
